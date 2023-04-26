@@ -33,7 +33,9 @@ void gameState() {
   } else {
     gameEnds = false;
     if (player == -1) {
+      println("Game continues, Computer's Turn!");
       computersMove();
+      println("You Turn!");
     } else if (player == 1) {
       keyTyped();
     }
@@ -52,7 +54,7 @@ int checkWin() {
     }
   }
   //check diagnoal lines
-  if (board[1][1] != 0 && ((board[0][0] == board[1][1] && board[1][1] == board[2][2]) &&
+  if (board[1][1] != 0 && ((board[0][0] == board[1][1] && board[1][1] == board[2][2]) ||
      (board[0][2] == board[1][1] && board[1][1] == board[2][0]))) {
       return board[1][1];
      }
@@ -94,5 +96,7 @@ void keyTyped() {
     } else {
       println("Thats not in range try 0-8!");
     }
+  } if (keyPressed && gameEnds == true) {
+    println("Game Over!");
   }
 }
