@@ -1,3 +1,9 @@
+//*******************************************************************************
+//  shapes.pde               Author: Courtney Grillo
+//
+//  Draws X and O after the turn is taken
+//*******************************************************************************
+
 void drawShapes() {
   for (int row = 0; row < 3; row++) {
     for (int column = 0; column < 3; column++) {
