@@ -82,7 +82,7 @@ void computersMove() {
 }
 
 void keyTyped() {
-  if(player == 1 && gameEnds == false) {
+  if(keyPressed) {
     if(key >= '0' && key <= '8') {
       int index = key - '0';
       int row = index / 3;
@@ -90,9 +90,9 @@ void keyTyped() {
       if (board[column][row] == 0) {
         board[column][row] = 1;
         player = -1;
-      } else {
-        println("Pick an in range value of 0 -8!");
       }
+    } else {
+      println("Thats not in range try 0-8!");
     }
   }
 }
